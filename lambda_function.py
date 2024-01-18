@@ -19,4 +19,4 @@ def lambda_handler(event, context):
     upload_path = '/tmp/thumbnail-{}'.format(tmpkey)
     s3_client.download_file(bucket, key, download_path)
     create_thumbnail(download_path, upload_path)
-    s3_client.upload_file(upload_path, '{}-thumbnail'.format(bucket), 'thumbnail-{}'.format(key))
+    s3_client.upload_file(upload_path, '{}-thumbnails'.format(bucket), 'thumbnail-{}'.format(key))
